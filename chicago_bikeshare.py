@@ -173,7 +173,19 @@ input("Press Enter to continue...")
 # TASK 7
 # TODO: Plot a similar graph for user_types. Make sure the legend is correct.
 print("\nTASK 7: Check the chart!")
-
+users_list = column_to_list(data_list, -3)
+user_types = ['Subscriber', 'Customer']
+users = [row[-3] for row in data_list]
+subscriber, customer = users.count("Subscriber"), users.count("Customer")
+quantity = [subscriber, customer]
+print(quantity)
+y_pos = list(range(len(user_types)))
+plt.bar(y_pos, quantity)
+plt.ylabel('Quantity')
+plt.xlabel('User')
+plt.xticks(y_pos, user_types)
+plt.title('Quantity by User')
+plt.show(block=True)
 
 input("Press Enter to continue...")
 # TASK 8
