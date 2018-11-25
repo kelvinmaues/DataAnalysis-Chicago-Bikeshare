@@ -1,6 +1,6 @@
 
 # coding: utf-8
-
+# Co-Author, Kelvin Maués
 # Here goes the imports
 import csv
 import matplotlib.pyplot as plt
@@ -14,7 +14,8 @@ print("Ok!")
 
 # Let's check how many rows do we have
 print("Number of rows:")
-print(len(data_list))
+data_list_len = len(data_list)
+print(data_list_len)
 
 # Printing the first row of data_list to check if it worked.
 print("Row 0: ")
@@ -33,6 +34,10 @@ print("\n\nTASK 1: Printing the first 20 samples")
 # Let's change the data_list to remove the header from it.
 data_list = data_list[1:]
 
+for row in range(0, 20):
+    print(row + 1, data_list[row])
+# This prints the index and row
+
 # We can access the features through index
 # E.g. sample[6] to print gender or sample[-2]
 
@@ -49,6 +54,8 @@ print("\nTASK 2: Printing the genders of the first 20 samples")
 input("Press Enter to continue...")
 # TASK 3
 # TODO: Create a function to add the columns(features) of a list in another list in the same order
+
+
 def column_to_list(data, index):
     column_list = []
     # Tip: You can use a for to iterate over the samples, get the feature by index and append into a list
@@ -60,9 +67,12 @@ print("\nTASK 3: Printing the list of genders of the first 20 samples")
 print(column_to_list(data_list, -2)[:20])
 
 # ------------ DO NOT CHANGE ANY CODE HERE ------------
-assert type(column_to_list(data_list, -2)) is list, "TASK 3: Wrong type returned. It should return a list."
-assert len(column_to_list(data_list, -2)) == 1551505, "TASK 3: Wrong lenght returned."
-assert column_to_list(data_list, -2)[0] == "" and column_to_list(data_list, -2)[1] == "Male", "TASK 3: The list doesn't match."
+assert type(column_to_list(data_list, -2)
+            ) is list, "TASK 3: Wrong type returned. It should return a list."
+assert len(column_to_list(data_list, -2)
+           ) == 1551505, "TASK 3: Wrong lenght returned."
+assert column_to_list(data_list, -2)[0] == "" and column_to_list(
+    data_list, -2)[1] == "Male", "TASK 3: The list doesn't match."
 # -----------------------------------------------------
 
 input("Press Enter to continue...")
@@ -86,6 +96,8 @@ input("Press Enter to continue...")
 # TASK 5
 # TODO: Create a function to count the genders. Return a list
 # Should return a list with [count_male, counf_female] (e.g., [10, 15] means 10 Males, 15 Females)
+
+
 def count_gender(data_list):
     male = 0
     female = 0
@@ -96,9 +108,11 @@ print("\nTASK 5: Printing result of count_gender")
 print(count_gender(data_list))
 
 # ------------ DO NOT CHANGE ANY CODE HERE ------------
-assert type(count_gender(data_list)) is list, "TASK 5: Wrong type returned. It should return a list."
+assert type(count_gender(data_list)
+            ) is list, "TASK 5: Wrong type returned. It should return a list."
 assert len(count_gender(data_list)) == 2, "TASK 5: Wrong lenght returned."
-assert count_gender(data_list)[0] == 935854 and count_gender(data_list)[1] == 298784, "TASK 5: Returning wrong result!"
+assert count_gender(data_list)[0] == 935854 and count_gender(
+    data_list)[1] == 298784, "TASK 5: Returning wrong result!"
 # -----------------------------------------------------
 
 input("Press Enter to continue...")
@@ -106,6 +120,8 @@ input("Press Enter to continue...")
 # TASK 6
 # TODO: Create a function to get the most popular gender and print the gender as string.
 # We expect to see "Male", "Female" or "Equal" as answer.
+
+
 def most_popular_gender(data_list):
     answer = ""
     return answer
@@ -115,8 +131,10 @@ print("\nTASK 6: Which one is the most popular gender?")
 print("Most popular gender is: ", most_popular_gender(data_list))
 
 # ------------ DO NOT CHANGE ANY CODE HERE ------------
-assert type(most_popular_gender(data_list)) is str, "TASK 6: Wrong type returned. It should return a string."
-assert most_popular_gender(data_list) == "Male", "TASK 6: Returning wrong result!"
+assert type(most_popular_gender(data_list)
+            ) is str, "TASK 6: Wrong type returned. It should return a string."
+assert most_popular_gender(
+    data_list) == "Male", "TASK 6: Returning wrong result!"
 # -----------------------------------------------------
 
 # If it's everything running as expected, check this graph!
@@ -163,7 +181,8 @@ median_trip = 0.
 
 
 print("\nTASK 9: Printing the min, max, mean and median")
-print("Min: ", min_trip, "Max: ", max_trip, "Mean: ", mean_trip, "Median: ", median_trip)
+print("Min: ", min_trip, "Max: ", max_trip,
+      "Mean: ", mean_trip, "Median: ", median_trip)
 
 # ------------ DO NOT CHANGE ANY CODE HERE ------------
 assert round(min_trip) == 60, "TASK 9: min_trip with wrong result!"
@@ -190,15 +209,15 @@ input("Press Enter to continue...")
 # TASK 11
 # Go back and make sure you documented your functions. Explain the input, output and what it do. Example:
 # def new_function(param1: int, param2: str) -> list:
-      """
-      Example function with annotations.
-      Args:
-          param1: The first parameter.
-          param2: The second parameter.
-      Returns:
-          List of X values
+"""
+    Example function with annotations.
+    Args:
+        param1: The first parameter.
+        param2: The second parameter.
+    Returns:
+        List of X values
 
-      """
+    """
 
 input("Press Enter to continue...")
 # TASK 12 - Challenge! (Optional)
@@ -206,6 +225,7 @@ input("Press Enter to continue...")
 # so we can use this function with a different kind of data.
 print("Will you face it?")
 answer = "no"
+
 
 def count_items(column_list):
     item_types = []
