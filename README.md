@@ -1,7 +1,7 @@
 # DataAnalysis-Chicago-Bikeshare :city_sunrise: :bicyclist: :bar_chart:
 A python project to analyses Chicago bike share data from Divvy.
 
-## The Datasets (Link here)[https://www.divvybikes.com/system-data]
+## The Datasets [Divvy Dataset](https://www.divvybikes.com/system-data)
 Data for the first six months of 2017 are provided. The data file contain six (6) columns:
 
 * Start Time (e.g. 2017-01-01 00:07:57)
@@ -16,14 +16,14 @@ Data for the first six months of 2017 are provided. The data file contain six (6
 
 ## The Tasks :dart: :
 
-[ ] Task 1: Print the first 20 samples(rows) from the database
-[ ] Task 2: Print the gender(column) of the first 20 samples
-[ ] Task 3: Create a function to get the columns as a list
-[ ] Task 4: Count how many of each gender do we have
-[ ] Task 5: Create a function to count the genders
-[ ] Task 6: Show the most popular gender
-[ ] Task 7: Plot a a chart using the previous data
-[ ] Task 8: Answer why summing the number of Males and Females doesn't match the number of samples
-[ ] Task 9: Find the minimum, maximum, mean and median duration of the trips
-[ ] Task 10: Get all the start stations of the dataset
-[ ] Task 11: Create a function count the occurrence of any given column (optional)
+- [ ] Task 1: Print the first 20 samples(rows) from the database
+- [ ] Task 2: Print the gender(column) of the first 20 samples
+- [ ] Task 3: Create a function to get the columns as a list
+- [ ] Task 4: Count how many of each gender do we have
+- [ ] Task 5: Create a function to count the genders
+- [ ] Task 6: Show the most popular gender
+- [ ] Task 7: Plot a a chart using the previous data
+- [ ] Task 8: Answer why summing the number of Males and Females doesn't match the number of samples
+- [ ] Task 9: Find the minimum, maximum, mean and median duration of the trips
+- [ ] Task 10: Get all the start stations of the dataset
+- [ ] Task 11: Create a function count the occurrence of any given column (optional)
