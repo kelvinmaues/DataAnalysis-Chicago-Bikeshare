@@ -193,7 +193,8 @@ input("Press Enter to continue...")
 male, female = count_gender(data_list)
 print("\nTASK 8: Why the following condition is False?")
 print("male + female == len(data_list):", male + female == len(data_list))
-answer = "Type your answer here."
+diff_gender = [row[gender_col_index] for row in data_list].count("")
+answer = "If the total amount of genders are not qual to the length it is because some values in the Gender column are null or undefined. This total is equal to: ".format(diff_gender)
 print("Answer:", answer)
 
 # ------------ DO NOT CHANGE ANY CODE HERE ------------
