@@ -87,6 +87,12 @@ input("Press Enter to continue...")
 male = 0
 female = 0
 
+# Using Generator Expression
+genders = [row[-2] for row in data_list]
+
+# Using 'count' method to return amount of an occurency
+male = genders.count("Male")
+female = genders.count("Female")
 
 # Checking the result
 print("\nTASK 4: Printing how many males and females we found")
