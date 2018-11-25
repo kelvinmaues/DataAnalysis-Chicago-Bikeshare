@@ -88,7 +88,7 @@ male = 0
 female = 0
 
 # Using Generator Expression
-genders = [row[-2] for row in data_list]
+genders = [row[gender_col_index] for row in data_list]
 
 # Using 'count' method to return amount of an occurency
 male = genders.count("Male")
@@ -112,6 +112,8 @@ input("Press Enter to continue...")
 def count_gender(data_list):
     male = 0
     female = 0
+    genders = [row[gender_col_index] for row in data_list]
+    male, female = genders.count("Male"), genders.count("Female")
     return [male, female]
 
 
