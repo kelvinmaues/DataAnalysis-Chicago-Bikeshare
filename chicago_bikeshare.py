@@ -137,6 +137,13 @@ input("Press Enter to continue...")
 
 def most_popular_gender(data_list):
     answer = ""
+    genders_values = count_gender(data_list)
+    if genders_values[0] > genders_values[1]:
+        answer = "Male"
+    elif genders_values[0] < genders_values[1]:
+        answer = "Female"
+    else:
+        answer = "Equal"
     return answer
 
 

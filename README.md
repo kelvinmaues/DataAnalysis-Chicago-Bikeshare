@@ -21,7 +21,7 @@ Data for the first six months of 2017 are provided. The data file contain six (6
 - [x] Task 3: Create a function to get the columns as a list
 - [x] Task 4: Count how many of each gender do we have
 - [x] Task 5: Create a function to count the genders
-- [ ] Task 6: Show the most popular gender
+- [x] Task 6: Show the most popular gender
 - [ ] Task 7: Plot a a chart using the previous data
 - [ ] Task 8: Answer why summing the number of Males and Females doesn't match the number of samples
 - [ ] Task 9: Find the minimum, maximum, mean and median duration of the trips
