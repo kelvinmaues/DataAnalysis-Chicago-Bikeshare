@@ -16,8 +16,8 @@ Data for the first six months of 2017 are provided. The data file contain six (6
 
 ## The Tasks :dart: :
 
-- [ ] Task 1: Print the first 20 samples(rows) from the database
-- [ ] Task 2: Print the gender(column) of the first 20 samples
+- [x] Task 1: Print the first 20 samples(rows) from the database
+- [x] Task 2: Print the gender(column) of the first 20 samples
 - [ ] Task 3: Create a function to get the columns as a list
 - [ ] Task 4: Count how many of each gender do we have
 - [ ] Task 5: Create a function to count the genders
