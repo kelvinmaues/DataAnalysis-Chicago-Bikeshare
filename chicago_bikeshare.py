@@ -60,6 +60,14 @@ input("Press Enter to continue...")
 
 
 def column_to_list(data, index):
+    """
+    Transfor a column from a CSV to a list.
+    Args:
+        data: the dataset.
+        index: the index column to tranform
+    Returns:
+        Returns a list of the choosen column
+    """
     column_list = []
     for row in data:
         column_list.append(row[index])
@@ -110,6 +118,13 @@ input("Press Enter to continue...")
 
 
 def count_gender(data_list):
+    """
+    Counts the number of a gender in a list.
+    Args:
+        data_list: a list.
+    Returns:
+        Returns a list with the male and female appearance counted
+    """
     male = 0
     female = 0
     genders = [row[gender_col_index] for row in data_list]
@@ -136,6 +151,13 @@ input("Press Enter to continue...")
 
 
 def most_popular_gender(data_list):
+    """
+    Verifies the most popular gender in a list.
+    Args:
+        data_list: a list.
+    Returns:
+        Returns a string with the most popular gender
+    """
     answer = ""
     genders_values = count_gender(data_list)
     if genders_values[0] > genders_values[1]:
@@ -194,7 +216,8 @@ male, female = count_gender(data_list)
 print("\nTASK 8: Why the following condition is False?")
 print("male + female == len(data_list):", male + female == len(data_list))
 diff_gender = [row[gender_col_index] for row in data_list].count("")
-answer = "If the total amount of genders are not qual to the length it is because some values in the Gender column are null or undefined. This total is equal to: ".format(diff_gender)
+answer = "If the total amount of genders are not qual to the length it is because some values in the Gender column are null or undefined. This total is equal to: ".format(
+    diff_gender)
 print("Answer:", answer)
 
 # ------------ DO NOT CHANGE ANY CODE HERE ------------
@@ -206,12 +229,77 @@ input("Press Enter to continue...")
 # TASK 9
 # TODO: Find the Minimum, Maximum, Mean and Median trip duration.
 # You should not use ready functions to do that, like max() or min().
+
+# Function to sort a list of numbers
+
+
+def sort_list(arr=[]):
+    """
+    Sort a list.
+    Args:
+        arr: a list.
+    Returns:
+        Returns a list ordered
+    """
+    # repeating loop len(a)(number of elements) number of times
+    for index in range(len(arr)):
+        # initially swapped is false
+        swap = False
+        i = 0
+        while i < len(arr) - 1:
+            # comparing the adjacent elements
+            print(arr[i], arr[i+1])
+            if arr[i] > arr[i+1]:
+                # swapping
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                # Changing the value of swapped
+                swap = True
+            i = i + 1
+        # if swapped is false then the list is sorted
+        # we can stop the loop
+        if swap == False:
+            break
+    return arr
+
+# Function to calculate the median of a list
+
+
+def calculate_median(arr=[], sorted_list=[]):
+    """
+    Calculate the median of a list.
+    Args:
+        arr: a list.
+        sorted_list: an ordered list.
+    Returns:
+        Returns median value
+    """
+    length = len(arr)
+    # Empty list
+    if length < 1:
+        return None
+    # length of the list is odd
+    if length % 2 == 1:
+        return sorted_list[length//2]
+    # lengh of the list is even
+    else:
+        return sum(sorted_list[length//2-1:length//2+1])/2.0
+
+
 trip_duration_list = column_to_list(data_list, 2)
+# Converting the time values from string to int
+trip_duration_list = [int(time) for time in trip_duration_list]
+
 min_trip = 0.
 max_trip = 0.
 mean_trip = 0.
 median_trip = 0.
 
+# new values
+sorted_trip_list = sort_list(trip_duration_list)
+min_trip = sorted_trip_list[0]
+max_trip = sorted_trip_list[-1]
+mean_trip = int(sum(trip_duration_list)/len(trip_duration_list))
+median_trip = calculate_median(trip_duration_list, sorted_trip_list)
 
 print("\nTASK 9: Printing the min, max, mean and median")
 print("Min: ", min_trip, "Max: ", max_trip,
@@ -228,7 +316,7 @@ input("Press Enter to continue...")
 # TASK 10
 # Gender is easy because usually only have a few options. How about start_stations? How many options does it have?
 # TODO: Check types how many start_stations do we have using set()
-user_types = set()
+user_types = set(column_to_list(data_list, 3))
 
 print("\nTASK 10: Printing start stations:")
 print(len(user_types))
