@@ -240,6 +240,7 @@ def sort_list(arr=[]):
     Returns:
         Returns a list ordered
     """
+    print("Sorting the list. It can take some time... e,e ")
     # repeating loop len(a)(number of elements) number of times
     for index in range(len(arr)):
         # initially swapped is false
@@ -257,6 +258,7 @@ def sort_list(arr=[]):
         # we can stop the loop
         if swap == False:
             break
+    print("The sorted list is: ", arr)
     return arr
 
 # Function to calculate the median of a list
