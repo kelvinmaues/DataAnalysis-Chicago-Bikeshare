@@ -216,8 +216,7 @@ male, female = count_gender(data_list)
 print("\nTASK 8: Why the following condition is False?")
 print("male + female == len(data_list):", male + female == len(data_list))
 diff_gender = [row[gender_col_index] for row in data_list].count("")
-answer = "If the total amount of genders are not qual to the length it is because some values in the Gender column are null or undefined. This total is equal to: ".format(
-    diff_gender)
+answer = "If the total amount of genders are not qual to the length it is because some values in the Gender column are null or undefined."
 print("Answer:", answer)
 
 # ------------ DO NOT CHANGE ANY CODE HERE ------------
@@ -248,7 +247,6 @@ def sort_list(arr=[]):
         i = 0
         while i < len(arr) - 1:
             # comparing the adjacent elements
-            print(arr[i], arr[i+1])
             if arr[i] > arr[i+1]:
                 # swapping
                 arr[i], arr[i+1] = arr[i+1], arr[i]
