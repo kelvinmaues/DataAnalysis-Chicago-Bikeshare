@@ -98,9 +98,13 @@ female = 0
 # Using Generator Expression
 genders = [row[gender_col_index] for row in data_list]
 
-# Using 'count' method to return amount of an occurency
-male = genders.count("Male")
-female = genders.count("Female")
+# A loop to count the genders by incrementing
+# the variables 'male' and 'female'
+for gender in genders:
+    if gender == 'Male':
+        male += 1
+    if gender == 'Female':
+        female += 1
 
 # Checking the result
 print("\nTASK 4: Printing how many males and females we found")
@@ -125,11 +129,14 @@ def count_gender(data_list):
     Returns:
         Returns a list with the male and female appearance counted
     """
-    male = 0
-    female = 0
-    genders = [row[gender_col_index] for row in data_list]
-    male, female = genders.count("Male"), genders.count("Female")
-    return [male, female]
+    genders_list = [row[gender_col_index] for row in data_list]
+    in_male, in_female = 0, 0
+    for gender in genders_list:
+        if gender == 'Male':
+            in_male += 1
+        if gender == 'Female':
+            in_female += 1
+    return [in_male, in_female]
 
 
 print("\nTASK 5: Printing result of count_gender")
@@ -159,10 +166,10 @@ def most_popular_gender(data_list):
         Returns a string with the most popular gender
     """
     answer = ""
-    genders_values = count_gender(data_list)
-    if genders_values[0] > genders_values[1]:
+    in_male, in_female = count_gender(data_list)
+    if in_male > in_female:
         answer = "Male"
-    elif genders_values[0] < genders_values[1]:
+    elif in_male < in_female:
         answer = "Female"
     else:
         answer = "Equal"
