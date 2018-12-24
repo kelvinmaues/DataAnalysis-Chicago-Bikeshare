@@ -204,11 +204,11 @@ input("Press Enter to continue...")
 
 def count_user_types(user_list):
     """
-    Counts the number of a gender in a list.
+    Counts the number of users in a list.
     Args:
-        data_list: a list.
+        user_list: a list.
     Returns:
-        Returns a list with the male and female appearance counted
+        Returns a list with the two types of users, 'Subscriber' and 'Customer'
     """
     subscriber, customer = 0, 0
     for user_type in user_list:
@@ -318,6 +318,14 @@ mean_trip = 0.
 median_trip = 0.
 
 def calculate_total_amount(some_list):
+    """
+    Sum the total amount of all numbers in a list.
+    Args:
+        some_list: a list.
+    Returns:
+        Returns the total amount with number type
+
+    """
     amount = 0
     for value in some_list:
         amount += value
