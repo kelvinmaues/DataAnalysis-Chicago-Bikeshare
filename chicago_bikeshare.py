@@ -201,11 +201,27 @@ plt.show(block=True)
 input("Press Enter to continue...")
 # TASK 7
 # TODO: Plot a similar graph for user_types. Make sure the legend is correct.
+
+def count_user_types(user_list):
+    """
+    Counts the number of a gender in a list.
+    Args:
+        data_list: a list.
+    Returns:
+        Returns a list with the male and female appearance counted
+    """
+    subscriber, customer = 0, 0
+    for user_type in user_list:
+        if user_type == 'Subscriber':
+            subscriber += 1
+        if user_type == 'Customer':
+            customer += 1
+    return [subscriber, customer]
+
 print("\nTASK 7: Check the chart!")
 users_list = column_to_list(data_list, -3)
 user_types = ['Subscriber', 'Customer']
-users = [row[-3] for row in data_list]
-subscriber, customer = users.count("Subscriber"), users.count("Customer")
+subscriber, customer = count_user_types(users_list)
 quantity = [subscriber, customer]
 print(quantity)
 y_pos = list(range(len(user_types)))
@@ -223,7 +239,7 @@ male, female = count_gender(data_list)
 print("\nTASK 8: Why the following condition is False?")
 print("male + female == len(data_list):", male + female == len(data_list))
 diff_gender = [row[gender_col_index] for row in data_list].count("")
-answer = "If the total amount of genders are not qual to the length it is because some values in the Gender column are null or undefined."
+answer = "If the total amount of genders are not qual to the length it is because some values in the gender column are null or undefined. And this difference is: {}".format(str(diff_gender))
 print("Answer:", answer)
 
 # ------------ DO NOT CHANGE ANY CODE HERE ------------
@@ -301,11 +317,18 @@ max_trip = 0.
 mean_trip = 0.
 median_trip = 0.
 
+def calculate_total_amount(some_list):
+    amount = 0
+    for value in some_list:
+        amount += value
+    return amount
+
 # new values
 sorted_trip_list = sort_list(trip_duration_list)
 min_trip = sorted_trip_list[0]
 max_trip = sorted_trip_list[-1]
-mean_trip = int(sum(trip_duration_list)/len(trip_duration_list))
+trip_total_duration = calculate_total_amount(trip_duration_list)
+mean_trip = int(trip_total_duration/len(trip_duration_list))
 median_trip = calculate_median(trip_duration_list, sorted_trip_list)
 
 print("\nTASK 9: Printing the min, max, mean and median")
