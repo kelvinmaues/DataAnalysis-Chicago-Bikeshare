@@ -48,8 +48,8 @@ input("Press Enter to continue...")
 
 print("\nTASK 2: Printing the genders of the first 20 samples")
 gender_col_index = header_list.index('Gender')
-for row in range(0, 20):
-    print(row + 1, data_list[row][gender_col_index])
+for line in data_list[:20]:
+    print(line[gender_col_index])
 
 # Cool! We can get the rows(samples) iterating with a for and the columns(features) by index.
 # But it's still hard to get a column in a list. Example: List with all genders
@@ -61,7 +61,7 @@ input("Press Enter to continue...")
 
 def column_to_list(data, index):
     """
-    Transfor a column from a CSV to a list.
+    Transfor a column from a CSV into a list.
     Args:
         data: the dataset.
         index: the index column to tranform
